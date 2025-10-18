@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="Discover free, effective workout plans and transform your fitness journey.">
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+    <title>Fitness</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Fitness</div>
+
+        <ul class="navbutton">
+            <li id="home-link"> <a href="#">Home</a></li>
+            <li> <a href="#" id="about-link"> About</a></li>
+            <li> <a href="Plan/index.html" id="workPlan">Workout plan</a></li>
+        </ul>
+    </nav>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span id="modal-close" style="cursor: pointer;">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <template id="tmpl-about">
+        <h2>About</h2>
+        <p>
+            On this website you can find your daily routines to work on your body and
+            read some motivations to help you on the way. You can click the workouts to
+            bring you to YouTube. Note that this is for educational purposes only.
+            Here we also have our <a class="memberslink" href="members.html">members</a>
+            who created this website.
+        </p>
+    </template>
+
+    <template id="tmpl-home">
+        <h2>You're already in Home!</h2>
+    </template>
+
+    <main>
+        <section class="hero">
+            <h2 class="head">Transform your fitness</h2>
+            <p class="para">Discover effective workout plans for free!</p>
+        </section>
+
+        <section class="workouts-preview">
+            <h3 class="Heading-3">Workouts!</h3>
+            <ul>
+                <li>
+                    <a href="body-workouts.html" data-transition class="workout-card">
+                        <div class="workout-info">Body Workouts</div>
+                        <img src="images/body-workout.jpg" alt="Body Effect" class="workout-img">
+                    </a>
+                </li>
+                <li>
+                    <a href="abs-workout.html" data-transition class="workout-card">
+                        <div class="workout-info">Abs Workouts</div>
+                        <img src="images/abs-workout.jpg" alt="Abs Effect" class="workout-img">
+                    </a>
+                </li>
+                <li>
+                    <a href="leg-workout.html" data-transition class="workout-card">
+                        <div class="workout-info">Leg Workouts</div>
+                        <img src="images/leg-workout.jpg" alt="Leg Effect" class="workout-img">
+                    </a>
+                </li>
+                <li>
+                    <a href="arm-workout.html" data-transition class="workout-card">
+                        <div class="workout-info">Arm Workouts</div>
+                        <img src="images/arm-workout.jpg" alt="Arm Effect" class="workout-img">
+                    </a>
+                </li>
+                <li>
+                    <a href="arm-workout.html" data-transition class="workout-card">
+                        <div class="workout-info">Back Workouts</div>
+                        <img src="images/back-workout.jpg" alt="Back Effect" class="workout-img">
+                    </a>
+                </li>
+                <li>
+                    <a href="arm-workout.html" data-transition class="workout-card">
+                        <div class="workout-info">Cardio Workouts</div>
+                        <img src="images/cardio-workout.jpg" alt="Cardio Effect" class="workout-img">
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="quote">
+        <p>“Change comes from working hard,
+            not from waiting and expecting a miracle to happen.”
+        </p>
+        <p class="hidden">I Love Frixcy</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

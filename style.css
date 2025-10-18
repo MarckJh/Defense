@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font-main: 'Roboto', 'Segoe UI', 'Open Sans', 'Helvetica Neue', 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    flex: 1;
+}
+
+/* Body & Background  */
+body {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
+        url("background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: var(--font-main);
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    overflow-y: scroll;
+    animation: fadeIn 0.7s ease-in forwards;
+    opacity: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  Navbar  */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: var(--font-main);
+}
+
+.logo {
+    color: #00ff88;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ff88;
+    border-bottom: 2px solid #00ff88;
+}
+
+/* Headings and Paragraphs  */
+.head,
+.para {
+    font-family: var(--font-main);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px 20px;
+    box-shadow: 0 2px 8px rgba(34, 34, 59, 0.3);
+    text-align: center;
+}
+
+.head {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.para {
+    background: rgba(0, 0, 0, 0.5);
+    color: #cfcfcf;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: auto;
+}
+
+/*  Workouts  */
+.workouts-preview {
+    color: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.workouts-preview h3 {
+    background: rgba(117, 117, 117, 0.329);
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.workouts-preview ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual workout card */
+.workout-card {
+    position: relative;
+    background: rgba(49, 49, 49, 0.5);
+    border-radius: 12px;
+    padding: 40px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workout-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 16px rgba(0, 255, 136, 0.3);
+}
+
+.workouts-preview li {
+    margin: 10px 0;
+    color: #f0f0f0;
+    background: rgba(49, 49, 49, 0.4);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    text-align: left;
+}
+
+.workouts-preview a {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    color: #00ff88;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.workouts-preview a:hover {
+    background: #00ff88;
+    color: #000;
+    box-shadow: 0 0 10px #00ff88;
+}
+
+/* Hidden image overlay */
+.workout-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    border-radius: 12px;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Workout text */
+.workout-info {
+    font-weight: bold;
+    font-size: 1.4rem;
+    z-index: 2;
+    position: relative;
+}
+
+/* How img */
+.workout-card:hover .workout-img {
+    opacity: 0.6;
+    /* slightly transparent so text still visible */
+}
+
+/*  Modal  */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    background: rgba(0, 0, 0, 0.93);
+    color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    min-width: 260px;
+    max-width: 90vw;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.memberslink {
+    color: #2252ff;
+    text-decoration: none;
+}
+
+/*  Quote Section  */
+.quote {
+    background: transparent;
+    color: #cccccc;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.95rem;
+    padding: 20px 12px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.4);
+}
+
+/*  Page Transitions  */
+.fade-out {
+    animation: fadeOut 0.4s forwards;
+}
+
+.hidden {
+    opacity: 0.0%;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*  Responsive Design  */
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .workouts-preview ul {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+}
