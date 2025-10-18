@@ -1,3 +1,10 @@
+document.querySelectorAll('a[href="index.html"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = '../home.html';
+  });
+});
+
 const jungle = [
   {
     day: 1, title: 'Chest + Abs', muscle: 'Chest', ex: [
