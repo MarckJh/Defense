@@ -41,10 +41,10 @@ document.getElementById('home-link').addEventListener('click', function (e) {
 // === Close modal function ===
 function closeModal() {
   const modal = document.getElementById('modal');
-  modal.classList.remove('show'); // remove animation class
+  modal.classList.remove('show');
   setTimeout(() => {
-    modal.style.display = 'none'; // hide after animation finishes
-  }, 300); // match CSS transition time (0.3s)
+    modal.style.display = 'none';
+  }, 300);
 }
 
 // === Close button ===
