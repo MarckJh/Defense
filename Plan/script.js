@@ -1,4 +1,4 @@
-document.querySelectorAll('a[href="index.html"]').forEach(link => {
+document.querySelectorAll('a[href$="index.html"], a[href$="plan.html"]').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
     window.location.href = '../home.html';
@@ -68,3 +68,12 @@ function render() {
 }
 
 render();
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === "test") {
+        setTimeout(() => {
+            sendResponse({ result: "done" });
+        }, 1000);
+        return true;
+    }
+});

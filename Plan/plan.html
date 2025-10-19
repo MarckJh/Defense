@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>7-Day Fitness Plan</title>
+  <link rel="stylesheet" href="plan.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="wolf">
+
+  <nav>
+    <div class="logo">Fitness</div>
+
+    <ul class="navbutton">
+      <li><a href="plan.html">Home</a></li>
+      <li><a href="#" id="about-link">About</a></li>
+    </ul>
+  </nav>
+
+  <div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span id="modal-close" style="cursor: pointer;">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <template id="tmpl-about">
+    <h2>About</h2>
+    <p>
+      On this website you can find your daily routines to work on your body and
+      read some motivations to help you on the way. You can click the workouts to
+      bring you to YouTube. Note that this is for educational purposes only.
+      Here we also have our <a class="memberslink" href="../members.html">members</a>
+      who created this website.
+    </p>
+  </template>
+
+  <div class="bear">
+    <header class="hawk">
+      <h1 class="lion">7-Day Fitness Plan</h1>
+    </header>
+
+    <p class="fox">Tap a checkbox to mark an exercise complete.</p>
+
+    <div class="owl" id="tigerCave"></div>
+
+    <footer class="wolfpack">
+      <div class="fox">Designed for a balanced week: strength, push/pull, legs, and active recovery.</div>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+  <script src="../main.js" defer></script>
+
+</body>
+
+</html>
