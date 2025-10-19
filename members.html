@@ -6,23 +6,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Members</title>
   <link rel="stylesheet" href="members.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+  <nav>
+    <div class="logo">Fitness</div>
+
+    <ul class="navbutton">
+      <li> <a href="home.html">Home</a></li>
+      <li> <a href="Plan/plan.html" id="workPlan">Workout plan</a></li>
+    </ul>
+  </nav>
+
+  <div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span id="modal-close" style="cursor: pointer;">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <template id="tmpl-about">
+    <h2>About</h2>
+    <p>
+      On this website you can find your daily routines to work on your body and
+      read some motivations to help you on the way. You can click the workouts to
+      bring you to YouTube. Note that this is for educational purposes only.
+      Here we also have our <a class="memberslink" href="members.html">members</a>
+      who created this website. I'm Tired
+    </p>
+  </template>
 
   <div class="hero">
     <h1 class="idk">Members</h1>
     <p>This is the Members who created the website.</p>
   </div>
 
-  <ul class="mems">
-    <a href="https://www.facebook.com/share/1BfLxQza1r/" <li><strong>Marck Jhone Banquero</strong> </li> </a>
-    <a href="https://www.facebook.com/share/1EXteSm6Kz/" <li><strong>Charles David Natal</strong></li>
-      <a href="https://www.facebook.com/share/1aeHoFAydZ/" <li> <strong>Aldin John Awatin</strong> </li> </a>
-      <a href="https://www.facebook.com/share/177ZHxvBBd/" <li> <strong>Zion Marru Marcial</strong></li> </a>
-      <a href="https://www.facebook.com/share/19fFtQpvWW/" <li> <strong>Aaron Mabasa</strong> </li>
-        <a href="https://www.facebook.com/share/198j5fz8Dk/" <li> <strong>Cedrick Vincent Ticmon</strong> </li>
-  </ul>
+  <section class="members-grid">
+    <div class="member-card">
+      <h3>Marckjh Banquero</h3>
+      <p>IM TIRED</p>
+    </div>
+
+    <div class="member-card">
+      <h3>Charles Natal</h3>
+      <p></p>
+    </div>
+
+    <div class="member-card">
+      <h3>Aaron Mabasa</h3>
+      <p></p>
+    </div>
+
+    <div class="member-card">
+      <h3>Aldin Awatin</h3>
+      <p></p>
+    </div>
+
+    <div class="member-card">
+      <h3>Cedriv Vincent Ticmon</h3>
+      <p></p>
+    </div>
+
+    <div class="member-card">
+      <h3>Zion Marcial </h3>
+      <p></p>
+    </div>
+  </section>
+
+  <script src="main.js" defer></script>
 
 </body>
 
